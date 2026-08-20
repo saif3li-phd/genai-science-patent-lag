@@ -1,4 +1,4 @@
-# GenAI and the Science-to-Technology Lag — Full Research Package
+# GenAI and the Science-to-Technology Lag - Full Research Package
 
 Study: Does generative AI accelerate the transition from science to corporate
 patents? Difference-in-Differences design; treated = GenAI-exposed CPC classes
