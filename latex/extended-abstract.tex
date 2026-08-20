@@ -1,0 +1,128 @@
+%% Extended Abstract for AI4SciSci 2026 (CEUR-WS style, anonymized for double-blind review)
+\documentclass[
+% twocolumn,
+% hf,
+]{ceurart}
+
+\sloppy
+
+\usepackage{listings}
+\lstset{breaklines=true}
+
+\begin{document}
+
+%% Rights management information.
+\copyrightyear{2026}
+\copyrightclause{Copyright for this paper by its authors.
+  Use permitted under Creative Commons License Attribution 4.0
+  International (CC BY 4.0).}
+
+%% Conference information
+\conference{AI4SciSci 2026: The 3rd International Workshop on Artificial Intelligence
+  for the Science of Science, October 13, 2026, Dallas, TX, USA}
+
+%% Title
+\title{Accelerating the Science-to-Technology Transition: How Generative AI Shapes
+  the Speed and Breakthroughness of Corporate Innovation}
+
+%% ANONYMIZED FOR DOUBLE-BLIND REVIEW
+\author[1]{Anonymous Author(s)}
+\address[1]{Anonymous Institution}
+
+\begin{abstract}
+Corporate R\&D draws on academic literature to develop commercial technologies, yet the transition from published science to patented invention has historically taken years. The rapid adoption of generative AI (GenAI) after 2023 gave firms new tools to synthesize scientific knowledge, automate code, and screen literature at scale. This raises an open question for the science of science: does GenAI help firms produce breakthrough innovation by connecting distant scientific fields, or does it drive incremental homogenization as competing firms converge on the outputs of the same underlying models? This extended abstract outlines an ongoing study of two questions. First, to what extent has GenAI adoption shortened the lag between academic publication and corporate patent citation? Second, does GenAI in R\&D yield more disruptive patents, or greater semantic similarity across competing firms? Using patent-to-paper citation links from the Lens with filings from 2018 to 2025, we estimate a difference-in-differences design: technology classes with high GenAI exposure (CPC G06N, G16B, G16C, C40B) form the treated group, mature mechanical classes with low exposure (F16B, F16H, B65D) form the control group, and the treatment period begins in 2023. The outcome is the science-to-technology lag, measured in days between a cited paper's publication and the citing patent's filing. Field-wide shocks common to both groups, such as examination speed-ups or drifting citation practices, are absorbed by the design; a placebo test on pre-period data and an inventor-citation-only subsample probe the remaining threats. Semantic homogenization across firms is examined descriptively with term co-occurrence maps of patent abstracts before and after 2023. The study aims to give corporate technology leaders evidence-based guidance on deploying GenAI in R\&D without eroding competitive advantage, and to add a business and commercialization perspective to the science-of-science literature.
+\end{abstract}
+
+\begin{keywords}
+  generative AI \sep
+  science of science \sep
+  science-to-technology lag \sep
+  patents \sep
+  breakthrough innovation \sep
+  difference-in-differences \sep
+  semantic homogenization
+\end{keywords}
+
+\maketitle
+
+\section{Introduction and Motivation}
+
+Corporate research and development depends on academic science. Firms read the literature, absorb new findings, and translate them into commercial technologies that surface as patents. This translation is slow. Prior work has documented a science-to-technology lag that typically spans years between the publication of a scientific result and its citation in a patent \cite{ahmadpoor2017dual, marx2020reliance}. In biomedicine, patent citations trail scientific citations by a median of six years for the majority of papers \cite{ke2018comparing}, and the time to first patent citation averages roughly a decade, varying systematically with paper characteristics such as basicness and novelty \cite{ke2020basicness}.
+
+The environment changed after 2023. The boom in generative AI (GenAI) gave R\&D teams tools that can synthesize scientific knowledge, automate code, and screen large volumes of literature in a fraction of the time these tasks used to take. Whether this shift improves the quality of corporate innovation remains an open question. One possibility is that GenAI helps firms connect distant scientific fields and produce breakthrough inventions. The competing possibility is incremental homogenization: because rival firms rely on the same foundation models, their inventive output may converge, making patents faster to file but less distinctive and less disruptive \cite{funk2017dynamic, park2023papers}.
+
+\section{Research Questions}
+
+\begin{itemize}
+\item \textbf{RQ1 (Speed).} To what extent has GenAI adoption after 2023 shortened the lag between academic publication and corporate patent citation?
+\item \textbf{RQ2 (Homogenization, descriptive).} Do patent abstracts in GenAI-exposed classes show signs of semantic convergence across competing firms after 2023?
+\end{itemize}
+
+\section{Data and Methods}
+
+\textbf{Data.} We draw patent records and their citations to scholarly works from the Lens,\footnote{\url{https://www.lens.org}} which links patents to the papers they cite with dated records on both sides, complemented by OpenAlex for paper-level attributes \cite{priem2022openalex}. The sample covers filings from 2018 through 2025 in seven CPC classes selected from the official CPC definitions maintained by the USPTO and EPO: a GenAI-exposed treated group (G06N, artificial intelligence and machine learning; G16B, bioinformatics; G16C, computational chemistry and materials; C40B, combinatorial chemistry) and a low-exposure mechanical control group (F16B, fastening devices; F16H, gearing; B65D, containers and packaging).
+
+\textbf{Identification.} We estimate a difference-in-differences model on patent--paper citation pairs: the log lag (days between paper publication and patent filing) is regressed on the interaction of treated class and post-2023 filing, with class and filing-year fixed effects and standard errors clustered by class--year. The interaction coefficient captures whether the lag shrank more in GenAI-exposed classes than in control classes, netting out shocks common to both groups.
+
+\textbf{Controls and robustness.} Because paper characteristics such as basicness and novelty shape both the likelihood and the speed of patent citation \cite{ke2020basicness}, we control for these attributes at the paper level. Two robustness checks address the main threats: a placebo estimation on 2015--2019 with a false 2017 treatment date (a significant placebo effect would falsify the design), and a re-estimation on inventor-originated citations only, since faster examiner search, rather than faster invention, could otherwise mimic the effect. For RQ2, we build term co-occurrence maps of treated-class patent abstracts before and after 2023 in VOSviewer \cite{vaneck2010vosviewer}, with identical extraction settings across panels, as descriptive evidence only. We acknowledge the documented limitations of direct citation linkage as a measure of knowledge flow \cite{denter2025novelty}; we retain citation links because our question is temporal, and direct citations are the only linkage yielding two dated events between which a lag can be measured.
+
+\section{Expected Contributions}
+
+The study targets two audiences. For corporate strategy, it aims to give CTOs and R\&D leaders evidence on how to deploy GenAI without eroding competitive advantage: faster absorption of science is valuable only if it does not collapse into undifferentiated output. For the science-of-science community, it adds a business and commercialization perspective, extending impact quantification beyond academia into patents and technology transfer, in line with the workshop's computational social science themes.
+
+%% Bibliography
+\begin{thebibliography}{9}
+
+\bibitem{ahmadpoor2017dual}
+M. Ahmadpoor, B. F. Jones,
+The dual frontier: Patented inventions and prior scientific advance,
+Science 357 (2017) 583--587.
+
+\bibitem{marx2020reliance}
+M. Marx, A. Fuegi,
+Reliance on science: Worldwide front-page patent citations to scientific articles,
+Strategic Management Journal 41 (2020) 1572--1594.
+
+\bibitem{funk2017dynamic}
+R. J. Funk, J. Owen-Smith,
+A dynamic network measure of technological change,
+Management Science 63 (2017) 791--817.
+
+\bibitem{park2023papers}
+M. Park, E. Leahey, R. J. Funk,
+Papers and patents are becoming less disruptive over time,
+Nature 613 (2023) 138--144.
+
+\bibitem{priem2022openalex}
+J. Priem, H. Piwowar, R. Orr,
+OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts,
+arXiv preprint arXiv:2205.01833 (2022).
+
+\bibitem{beltagy2019scibert}
+I. Beltagy, K. Lo, A. Cohan,
+SciBERT: A pretrained language model for scientific text,
+in: Proceedings of EMNLP-IJCNLP, 2019, pp. 3615--3620.
+
+\bibitem{ke2018comparing}
+Q. Ke,
+Comparing scientific and technological impact of biomedical research,
+Journal of Informetrics 12 (2018) 706--717.
+
+\bibitem{ke2020basicness}
+Q. Ke,
+Technological impact of biomedical research: The role of basicness and novelty,
+Research Policy 49 (2020) 104071.
+
+\bibitem{vaneck2010vosviewer}
+N. J. van Eck, L. Waltman,
+Software survey: VOSviewer, a computer program for bibliometric mapping,
+Scientometrics 84 (2010) 523--538.
+
+\bibitem{denter2025novelty}
+N. M. Denter, J. Waterstraat, M. G. Moehrle,
+Avoiding the pitfalls of direct linkage: A novelty-driven approach to measuring scientific impact on patents,
+Journal of Informetrics 19 (2025).
+
+\end{thebibliography}
+
+\end{document}
