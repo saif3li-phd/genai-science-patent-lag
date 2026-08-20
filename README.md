@@ -41,9 +41,9 @@ then full paper (Journal of Informetrics / Scientometrics tier).
 
 ## Status at packaging time
 
-- Collected + cleaned: 6 of 7 classes; 251,845 pairs in data/clean.
-- Pending: citations_G06N_* exports (in progress), F16H patents re-export
-  (flagged in docs/04), then analysis and results/.
+- Data COMPLETE: 429,111 main pairs (7/7 classes) + 100,032 placebo pairs (2015-2017).
+- Results in results/: main DiD, truncation spec ladder, placebo (clean), patent-level check.
+- Abstract in findings form (latex/), anonymized replication archive published.
 
 ## Integrity policy
 
