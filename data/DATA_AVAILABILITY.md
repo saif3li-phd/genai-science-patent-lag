@@ -25,10 +25,11 @@ Cleaned analysis datasets included directly in data/clean/:
 - lag_pairs_v2_year.csv.gz   year-based dating rule, 737,032 pairs
 - lag_pairs_9classes_v2.csv.gz  with E05B/B25B, bootstrap use only
 - lag_pairs_sci.csv.gz       science-intensive controls, 817,927 pairs
-- placebo_pairs_v2.csv.gz    2015-2017 filings; the G16C citation batch of
-                             this window is truncated (exactly 1,000 rows,
-                             re-export pending); placebo results rest on the
-                             other six classes
+- placebo_pairs_v2.csv.gz    2015-2017 filings, 233,081 pairs including the
+                             2018-2019 slice of the main build; rebuilt
+                             2026-08-25 with the complete G16C citation
+                             re-export (6,130 works; the original export was
+                             truncated at 1,000 rows)
 - lag_pairs.csv, placebo_pairs.csv  the v1 files, kept for the v1-vs-v2
                              comparison in results/item10
 - data/g06n_cpc.csv.gz       patent-level CPC codes for G06N (dose,
