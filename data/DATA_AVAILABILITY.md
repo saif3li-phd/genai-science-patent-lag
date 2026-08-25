@@ -1,7 +1,15 @@
 # Data Availability (anonymized replication archive)
 
-Raw Lens.org exports are excluded from this archive for size and licensing
-reasons. They are fully regenerable from a Lens.org account:
+The FULL raw Lens.org exports (all columns) are excluded from this archive for
+size and licensing reasons; they are fully regenerable from a Lens.org account
+by the protocol below. The SLIM versions of every raw export (the columns the
+build scripts read: patents = Lens ID, Application Date, NPL Resolved Lens
+ID(s), Applicants, Legal Status, CPC Classifications; citations = Lens ID,
+Date Published, Publication Year) ARE included, in data/raw_full_slim/ (50
+files, main + placebo windows) and data/raw_sci_slim/ (38 files, science
+controls), so the entire pipeline from raw export to every published estimate
+runs from this repository as-is (see results/repro_check_2026-08-25.md).
+To regenerate the full exports:
 
 1. Follow docs/02_lens_query_protocol.md for the queries
    (class_cpc.symbol:<CLASS>*, Filed 2018-01-01..2025-12-31, US):
@@ -13,10 +21,11 @@ reasons. They are fully regenerable from a Lens.org account:
    docs/04_export_log_filled.md and in the docs/02 addenda.
 3. v1 build: place exports in data/raw/ (main) and data/raw_placebo/
    (placebo), then run code/build_lag_dataset.py.
-   v2 build (current): slim exports (Lens ID, dates, Publication Year, CPC)
-   in data/raw_full_slim/, then code/build_lag_dataset_v2.py.
-   Science controls: slim exports in data/raw_sci_slim/, then
-   code/build_sci_controls.py.
+   v2 build (current): code/build_lag_dataset_v2.py on data/raw_full_slim/.
+   Science controls: code/build_sci_controls.py on data/raw_sci_slim/.
+   A full reproduction check (rebuild from these slim exports, content-hash
+   comparison, headline estimates) is in results/repro_check_2026-08-25.md:
+   zero discrepancies.
 
 Cleaned analysis datasets included directly in data/clean/:
 
