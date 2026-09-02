@@ -6,7 +6,7 @@ plus two new columns kept for later steps:
   main_group (the patent's own-class CPC main group, e.g. G06N3, F16B5, parsed from
               CPC Classifications; empty when no code of the own class appears)
 
-Inputs: /mnt/user-data/uploads/.../data/raw_full_slim/*.slim.csv.gz
+Inputs: ../data/raw_full_slim/*.slim.csv.gz (slim Lens exports: Lens ID + dates + Publication Year + CPC)
   patents:  Lens ID, Application Date, NPL Resolved Lens ID(s), Applicants,
             Legal Status, CPC Classifications
   citations: Lens ID, Date Published, Publication Year
@@ -26,7 +26,7 @@ import re
 from pathlib import Path
 import pandas as pd
 
-RAW = Path("/mnt/user-data/uploads/Researchs/GenAI-Sci2Tech/sci-tech-lag-C45D/data/raw_full_slim")
+RAW = Path("../data/raw_full_slim")
 CLEAN = Path("../data/clean")
 TREATED = {"G06N", "G16B", "G16C", "C40B"}
 CONTROL7 = {"F16B", "F16H", "B65D"}
