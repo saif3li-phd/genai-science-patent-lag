@@ -7,8 +7,7 @@ patents? Difference-in-Differences design; treated = GenAI-exposed CPC classes
 treatment period from 2023-01-01.
 
 Target: AI4SciSci 2026 extended abstract (EasyChair #14, under review,
-notification 2026-09-21), then full paper (Journal of Informetrics /
-Scientometrics tier).
+notification 2026-09-21), then a full paper submitted to Scientometrics.
 
 ## Folder map
 
@@ -39,7 +38,7 @@ Scientometrics tier).
                                        lag_pairs_9classes_v2.csv.gz, lag_pairs_v2_year.csv.gz,
                                        lag_pairs_sci.csv.gz, placebo_pairs(_v2).csv.gz
     latex/
-      extended-abstract.tex/.pdf       ANONYMIZED submission version (frozen during review)
+      extended-abstract.tex/.pdf       ANONYMIZED submission version, v3.4 (2026-09-03)
       ceurart.cls, ccicons.sty         CEUR template files
     results/                           regression tables + figures
 
@@ -53,6 +52,17 @@ Scientometrics tier).
     5. decomposition: instrument_vs_subject.py, main_group_inference.py, firm_exposure.py
     6. VOSviewer maps: follow docs/03
 
+## Extended abstract, v3.4 (2026-09-03)
+
+Title, abstract and keywords are unified with the journal manuscript by the
+researcher's decision: "Foundation over Frontier: The Age of Science Cited by
+Patents after the Diffusion of Generative AI". The keyword list is the journal's
+six (generative AI; science of science; science-to-technology lag; patent
+citations; difference-in-differences; knowledge flows); "breakthrough innovation"
+and "semantic homogenization" were dropped because the paper does not measure the
+first and reports a null result for the second. Only the anonymized pair lives in
+this repository; the named version is kept offline for the camera-ready.
+
 ## Status (v2, 2026-08-25)
 
 - Current dataset: lag_pairs_v2.csv.gz, 441,537 pairs (corrected G06N citation
@@ -64,8 +74,12 @@ Scientometrics tier).
   patents (item 11); adopting firms RETAIN fresh science better in their
   non-generative patents (+4.54 pp, p=0.021, item 13); 133-main-group wild
   cluster bootstrap in item 12.
-- Known gap: citations-g16c-placebo export truncated (exactly 1,000 rows);
-  re-export pending; placebo unaffected in the other six classes.
+- Closed gap (2026-08-25): the citations-g16c-placebo export had been truncated
+  by the export tool at exactly 1,000 rows. The complete re-export is in place
+  (6,130 works against 6,136 on the Lens screen, a 0.1 percent discrepancy);
+  G16C 2015-2017 pairs rise from 727 to 1,428 and placebo_pairs_v2.csv.gz now
+  holds 233,081 pairs. The truncated file is quarantined in _wrong_exports/.
+  See results/placebo_v2_full_g16c_2026-08-25.md.
 
 ## Integrity policy
 
